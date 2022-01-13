@@ -1,5 +1,5 @@
 export const array = [
-  {
+  /* {
     contractor_name: "LOTOI S.A.",
     contractor_code: "30-71587045-9",
     sites: [
@@ -61,5 +61,5 @@ export const array = [
         location_name: "Cordoba",
       },
     ],
-  },
+  }, */
 ];

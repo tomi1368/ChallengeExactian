@@ -26,10 +26,10 @@
         flex-direction: column;
         gap: 10px;
       }
-      input[type="number"] {
+      input[type="text"] {
         padding: 10px 15px;
       }
-      input[type="button"] {
+      button[type="submit"] {
         padding: 5px 10px;
         width: 40%;
         cursor: pointer;

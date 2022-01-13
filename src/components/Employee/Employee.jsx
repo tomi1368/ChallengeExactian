@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import { employeeSearch } from "./functions/functions";
 import "./Employee.scss";
 import { useNavigate } from "react-router-dom";
+import {
+  errorHandler,
+  schema,
+  initialValue,
+} from "./formSettings/formSettings";
+import { Formik, Field, Form } from "formik";
 
 const Employee = () => {
-  const [dni, setDNI] = useState({ dni: "" });
   const [errorDNI, setErrorDNI] = useState(null);
   const navigate = useNavigate();
-  
+
   return (
     <>
       <div className="search-employee">
@@ -17,23 +22,29 @@ const Employee = () => {
 
         <div className="search-employee__box">
           <h2>Search Employee</h2>
-          <div className="search-employee__box__form">
-            <div className="search-employee__box__form__dni">
-              <label htmlFor="dni">DNI</label>
-              <input
-                name="dni"
-                id="dni"
-                onChange={(e) => setDNI({ [e.target.name]: e.target.value })}
-                placeholder="Enter employee DNI"
-                type="number"
-              />
-            </div>
-            <input
-              value="Search"
-              type="button"
-              onClick={() => employeeSearch(dni, navigate,setErrorDNI)}
-            />
-          </div>
+          <Formik
+            initialValues={initialValue}
+            validationSchema={schema}
+            onSubmit={(v) => employeeSearch(v, navigate, setErrorDNI)}
+          >
+            {({ errors }) => {
+              return (
+                <Form className="search-employee__box__form">
+                  <div className="search-employee__box__form__dni">
+                    <label htmlFor="dni">DNI</label>
+                    <Field
+                      name="dni"
+                      id="dni"
+                      placeholder="Enter employee DNI"
+                      type="text"
+                    />
+                    {errorHandler(errors).dni()}
+                  </div>
+                  <button type="submit">Search</button>
+                </Form>
+              );
+            }}
+          </Formik>
         </div>
       </div>
     </>

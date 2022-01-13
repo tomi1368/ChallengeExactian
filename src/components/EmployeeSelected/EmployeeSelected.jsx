@@ -25,14 +25,14 @@ const EmployeeSelected = () => {
         <>
           <div className="employee-data">
             <ul className="employee-data__emp">
-              <li>{`Name Employee : ${employee.employee_name}`}</li>
+              <li>{`Employee Name : ${employee.employee_name}`}</li>
               <li>{`Employee Code : ${employee.employee_code}`}</li>
               <li>{`Tasks: ${employee.tasks || "empty"}`}</li>
             </ul>
 
             <ul className="employee-data__contr">
-              <li>{`Name Contractor : ${employee.contractor_name}`}</li>
-              <li>{`Employee Code : ${employee.contractor_code}`}</li>
+              <li>{`Contractor Name : ${employee.contractor_name}`}</li>
+              <li>{`Contractor Code : ${employee.contractor_code}`}</li>
             </ul>
           </div>
 

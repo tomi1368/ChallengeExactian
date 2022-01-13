@@ -4,7 +4,7 @@ import "./Loader.scss"
 const Loader = () => {
     return (
         <div className='loader'>
-            <img src={tailspin} alt="" />
+            <img src={tailspin} alt="tail-spin" />
         </div>
     )
 }
