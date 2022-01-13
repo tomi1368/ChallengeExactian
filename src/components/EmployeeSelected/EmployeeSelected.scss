@@ -1,0 +1,31 @@
+.employee-data {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  &__emp {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  &__contr {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+.employee-title {
+  width: 90%;
+  margin: 20px auto;
+}
+
+.modal{
+  width: 100%;
+  padding: 20px 0;
+  background-color: #e03;
+  text-align: center;
+  position: absolute;
+  top: 80px;
+}
