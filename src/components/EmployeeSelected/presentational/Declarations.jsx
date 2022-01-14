@@ -1,6 +1,5 @@
 import React from "react";
 import Sites from "./presentational/Sites";
-import { array } from "../../../../mock/mock";
 import "./Declarations.scss"
 
 const Declarations = ({declarations}) => {
@@ -8,10 +7,10 @@ const Declarations = ({declarations}) => {
   return (
     <div className="declarations-container">
       <h2>Declaration Sites</h2>
-      {array.length == 0 ? 
+      {declarations.length == 0 ? 
       <h5 className="declarations-container__dontfound" >Dont found sites</h5>
       :
-      array.map((el) => {
+      declarations.map((el) => {
         return (
         <div className="declarations" > 
             <ul className="declarations-contractor">
