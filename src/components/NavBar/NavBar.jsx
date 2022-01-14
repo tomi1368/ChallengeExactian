@@ -1,12 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Link, Outlet } from "react-router-dom";
+import { logOut } from "./functions/functions";
 import "./NavBar.scss";
 
 
 
 
 const NavBar = () => {
-
+  const navigate = useNavigate()
   return (
     <>
     <nav className="nav">
@@ -16,8 +18,8 @@ const NavBar = () => {
        </Link>
      </div>
      <ul className="nav-links">
-       <Link to={"/employee"}><li>Employee</li></Link>
-       <Link to={"/login"} ><li>Login</li></Link>
+       { localStorage.getItem("user-token") && <Link to={"/employee"}><li>Employee</li></Link>}
+       { localStorage.getItem("user-token") ?   <button onClick={()=>logOut(navigate)} style={{background:"transparent",border:"none",outline:"none",cursor:"pointer",fontSize:"14px",fontFamily:"Montserrat, sans-serif"}}>Log Out</button> : <Link to={"/login"} ><li>Login</li></Link>}
      </ul>
     </nav>
     <Outlet/>

@@ -7,7 +7,7 @@ const Declarations = ({declarations}) => {
     console.log(declarations)
   return (
     <div className="declarations-container">
-      <h2>Sitios Declarados</h2>
+      <h2>Declaration Sites</h2>
       {array.length == 0 ? 
       <h5 className="declarations-container__dontfound" >Dont found sites</h5>
       :
