@@ -19,7 +19,7 @@ const NavBar = () => {
      </div>
      <ul className="nav-links">
        { localStorage.getItem("user-token") && <Link to={"/employee"}><li>Employee</li></Link>}
-       { localStorage.getItem("user-token") ?   <button onClick={()=>logOut(navigate)} style={{background:"transparent",border:"none",outline:"none",cursor:"pointer",fontSize:"14px",fontFamily:"Montserrat, sans-serif"}}>Log Out</button> : <Link to={"/login"} ><li>Login</li></Link>}
+       { localStorage.getItem("user-token") ?   <button className="nav-links__logout" onClick={()=>logOut(navigate)}>Log Out</button> : <Link to={"/login"} ><li>Login</li></Link>}
      </ul>
     </nav>
     <Outlet/>

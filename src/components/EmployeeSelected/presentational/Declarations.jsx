@@ -3,7 +3,6 @@ import Sites from "./presentational/Sites";
 import "./Declarations.scss"
 
 const Declarations = ({declarations}) => {
-    console.log(declarations)
   return (
     <div className="declarations-container">
       <h2>Declaration Sites</h2>

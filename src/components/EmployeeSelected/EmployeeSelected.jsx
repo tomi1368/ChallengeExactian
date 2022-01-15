@@ -41,7 +41,7 @@ const EmployeeSelected = () => {
         </>
       ) : (
         <h3 className="employee-title">
-          Error : User didn´t found or doesn´t exist
+          Error : User not found or doesn´t exist
         </h3>
       )}
     </>
